@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gustavo Juantorena | Neuroscience, Data Science & AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal site of Gustavo Juantorena, neuroscientist and computer science PhD student working on computational psychiatry, digital neuropsychology and data science.">
+ 
+
+  
+
+<!-- ------------------------------------------------ -->
+
+  <style>
+
+    :root {
+      --bg: #0b1020;
+      --bg-alt: #151b2f;
+      --accent: #4890d0;
+      --accent-soft: rgba(79, 156, 255, 0.15);
+      --text: #f5f5f5;
+      --muted: #a3abc2;
+      --border: #293252;
+      --card-radius: 16px;
+      --max-width: 1000px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151b2f 0, #050814 55%, #02030a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 1.5rem;
+      
+      display: flex;
+      justify-content: center;
+    }
+
+   body.dark-mode .page{
+        
+        background-color: white;
+    }
+
+    body.dark-mode {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151b2f 0, #050814 55%, #02030a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+
+
+     
+
+/* Contenedor del botón */
+.dark-mode-toggle.modern { /*  Modo claro   */
+    position: fixed;
+    top: 5%;
+    
+    margin-left: 20px;
+   
+    width: 30px;
+    height: 30px;
+    /* margin: 25px 0 10px 0; */
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 10%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 80;
+    transition: 0.3s linear;
+  }
+  
+  body.dark-mode .dark-mode-toggle.modern {
+    background-color: transparent; /* Modo oscuro*/
+   
+    transition: 0.3s linear;
+  }
+
+
+ 
+
+  .dark-mode-toggle.modern:hover { /*  Modo claro   */
+    transform: scale(.95);
+    box-shadow:  0 0px .2rem .1rem var(--accent);
+    transition: 0.3s linear;
+  }
+
+
+  body.dark-mode .dark-mode-toggle.modern:hover {
+    transform: scale(.95);
+    box-shadow:  0 0px .2rem .1rem var(--accent);
+    transition: 0.3s linear;
+  }
+  
+  
+  /* Ícono dentro del botón */
+  .icon {
+    width: 15px;
+    height: 15px;
+    
+   /*  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23FFD700"/></svg>') no-repeat center / contain; */
+  
+    background-color: white;
+    border-radius: 50%;
+   
+    transition: 0.3s linear;
+  }
+
+
+  
+  
+  body.dark-mode .modern .icon {
+    filter: invert(1);  
+    transition: 0.3s linear;
+  }
+
+ 
+
+
+
+    .page,  body.dark-mode .page {
+      width: 100%;
+      max-width: var(--max-width);
+      padding: 50px 10px 20px 10px;
+    }
+
+
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(11,16,32,0.85);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+
+    body.dark-mode .badge{
+        color: white;
+    }
+
+    .serie h2{
+   
+      border-bottom: 2px solid rgb(126, 126, 126);
+      
+      padding: .8rem;
+    }
+
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin: 1rem 0 0.5rem;
+    }
+
+    .media-item h1{
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 100;
+      margin: 1rem .2rem;
+      line-height: 30px;
+    }
+
+ 
+    article.media-item.conexiones h1{
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 100;
+      margin: 1rem .2rem;
+      line-height: 20px;
+    }
+
+   body.dark-mode article.media-item.conexiones h1{
+      font-size: 1.1rem;
+     
+      color: rgb(0, 0, 0);
+      font-weight: 100;
+      margin: 1rem .2rem;
+      line-height: 20px;
+    }
+
+
+    .media-item strong{
+      font-weight: 800;
+      letter-spacing: .1rem;  
+      }
+
+    article.media-item.conexiones p, article.media-item p{
+      margin: 1.5rem 1rem;
+      font-size: .7rem;
+    }
+
+    .media-item a{
+      font-size: .8rem;
+      transition: color .2s linear;
+    }
+
+    .media-item a:hover{
+      color: gray;
+      transition: color .2s linear;
+    }
+
+   
+    .subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0.5rem auto 1rem;
+    }
+
+    .subtitle a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .subtitle a:hover {
+      text-decoration: underline;
+    }
+
+    body.dark-mode .subtitle{
+        color: rgb(66, 66, 66);
+    }
+
+
+    p{
+      text-align: center;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 0.75rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(9,14,30,0.8);
+      text-decoration: none;
+      transition: .2s linear;
+    }
+
+
+    .tag:hover{
+      text-decoration: none;
+      box-shadow: 0 0 0 0.1rem var(--accent);
+    }
+    body.dark-mode .tag{
+        color: white;
+    }
+
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .lang-btn span:first-child {
+  font-size: .7em;  /* Chico como 🇬🇧 */
+  line-height: 1;
+  margin-right: 0.3em;
+  display: inline-block;
+}
+
+.lang-btn span:last-child {
+  font-size: 1em;    /* Texto normal */
+}
+
+    .lang-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      background: rgba(10,15,32,0.8);
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+
+    body.dark-mode .lang-btn{
+        background-color: transparent;
+        color: rgb(94, 93, 93);
+    }
+
+    .lang-btn.active {
+      background: var(--accent-soft);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    body.dark-mode .lang-btn.active{
+        transition: .2s linear;
+        color: black;
+        box-shadow: inset 0 0 .5rem var(--accent);
+    }
+    main {
+      margin-top: 1.5rem;
+    }
+
+    .lang-section {
+      display: none;
+      animation: fadeIn 0.3s ease-out;
+
+    }
+
+ 
+    .lang-section.active {
+      display: block;
+    }
+
+
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      background-color: rgba(11,16,32,0.9);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin: 3.5rem 0;
+    box-shadow: 0 0 .8rem .05rem var(--accent);
+     transition: .2s linear;
+    }
+
+
+    section:hover{
+        
+         box-shadow: 0 0 .3rem .05rem var(--accent);
+        transition: .2s linear;
+    }
+
+      body.dark-mode section{
+        box-shadow: 0 0 1rem .3rem rgb(101, 101, 101);
+        transition: .2s linear;
+    }
+
+          body.dark-mode section:hover{
+        box-shadow: 0 0 .3rem .05rem rgb(101, 101, 101);
+        transition: .2s linear;
+    }
+
+
+    section h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    
+    
+      text-align: center;
+      
+    }
+
+    body.dark-mode section h2{
+        color: black;
+    }
+
+  
+
+    body.dark-mode section p{
+        color: rgb(74, 74, 74);
+    }
+    .about-text p + p {
+      margin-top: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      
+      align-items: center;
+      justify-content: center;
+    height: 60px;
+
+    }
+
+  
+    .social{
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .desarrollo{
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    body.dark-mode .social-links{
+        background-color: transparent;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+     
+      padding: 0.4rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8,12,26,0.9);
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+
+
+
+.facebook-class{
+  width: 40px;
+  height: 40px;
+  
+  margin-top: 30px;
+  background-image: url('linkedin.png');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  box-shadow: 0 0 .5rem .1rem gray;
+  transition: .2s linear;
+}
+
+.facebook-class:hover{
+  transform: translateY(-1px);
+ box-shadow: 0 0 .2rem .05rem rgb(85, 85, 85);
+ transition: .2s linear;
+}
+
+.sin-margin{
+  margin-left: 0;
+}
+    
+    .social-link img {
+      width: 18px;
+      height: 18px;
+      filter: invert(1) grayscale(1);
+      
+    }
+
+    .social-link span.label {
+      opacity: 0.8;
+    }
+
+    .email {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    
+    }
+
+    body.dark-mode .email code{
+        color: white;
+    }
+
+    .email code {
+      background: rgba(7,11,24,0.9);
+      border-radius: 6px;
+      padding: 0.15rem 0.4rem;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 1.1fr;
+      gap: 1.25rem;
+    }
+
+    .stats-card {
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: var(--card-radius);
+      border: 1px dashed var(--border);
+      background: radial-gradient(circle at top, rgba(79,156,255,0.15), rgba(5,8,20,0.95));
+    }
+
+    .stats-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stats-card small {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.5rem;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(13,18,34,0.9);
+      text-align: left;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(9,14,30,0.9);
+    }
+
+      body.dark-mode  tbody tr {
+      background-color: white;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 0.35rem;
+    }
+
+    .list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .media-grid {
+      /*display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;*/
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-around;
+      
+    }
+
+    section h2{
+      margin: 10px auto 30px auto;
+    }
+
+    .media-item {
+      width: 250px;
+      height: 400px;
+    
+      text-align: center;
+     border: solid rgb(255, 255, 255) 3px;
+     box-shadow: 0 3px 1rem .2rem gray, inset 0 0 1rem gray;
+     border-radius: 5px;
+    transition: .2s linear;
+    }
+
+    .media-item:hover {
+     transition: .2s linear;
+     transform: translateY(-1px);
+     box-shadow: 0 3px .3rem .2rem gray, inset 0 0 1rem gray;
+    
+    
+    }
+
+    body::-webkit-scrollbar{
+    background-color: var(--bg);
+     width: 11px;
+    
+    }
+
+    body::-webkit-scrollbar-thumb{
+     
+ 
+      border-radius: 10px;
+      background-color: var(--accent);
+      
+      box-shadow: inset 0 0 .45rem rgb(0, 0, 0);
+    
+    }
+
+    
+    body::-webkit-scrollbar-thumb:hover{
+   
+      box-shadow: inset 0 0 .5rem rgb(113, 113, 113);
+    }
+
+
+    .media-item a{
+      text-decoration: none;
+    }
+    
+    .media-item img {
+      width: 100%;
+      
+     
+      border: 1px solid rgba(255,255,255,0.08);
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      box-shadow: 0 3px 1rem .1rem rgb(102, 102, 102);
+      
+    }
+
+    .media-item .description-container{
+      
+      height: 100px;
+    
+      overflow-y: scroll;
+    }
+    .media-item p {
+      font-size: 0.7rem;
+      margin: 0 1rem;
+     
+     
+    }
+
+  .media-item .description-container::-webkit-scrollbar{
+
+     width: 5px;
+    
+    }
+
+  .media-item .description-container::-webkit-scrollbar-thumb{
+     
+     
+      border-radius: 10px;
+     background-color: var(--accent);
+    
+      box-shadow: inset 0 0 .1rem rgb(0, 0, 0); 
+  
+    }
+
+    
+  .media-item .description-container::-webkit-scrollbar-thumb:hover{
+  
+      box-shadow: inset 0 0 .5rem rgb(113, 113, 113);
+    }
+
+
+    body.dark-mode .grid-2 div p{
+        color: rgb(60, 60, 60);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 5rem;
+      padding: 20px 0 0 0;
+      background-color: var(--bg);
+    }
+
+    body.dark-mode footer p{
+        color: rgb(173, 173, 173);
+    }
+
+
+    body.dark-mode .value-prop {
+      font-weight: 600;
+      font-size: 1.1em;
+      color: #1a365d; /* azul ejecutivo */
+     
+    }
+
+    .btn-link-container{
+      max-width: 290px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+
+    .btn-link{
+      background-color: var(--accent);
+       background-color: black;
+     box-shadow: 0 0 .5rem 0.05rem var(--accent);
+      font-size: .85rem;
+      border: 1px solid gray;
+      width: 135px;
+      padding: 5px 0;
+      border-radius: 5px;
+      transition: .2s linear;
+      color: white;
+      margin: 0 2px;
+    }
+
+    .btn-link:hover{
+      background-color: black;
+      text-decoration: none;
+      transition: .2s linear;
+      
+        box-shadow: 0 0 .2rem 0 var(--accent);
+    }
+
+     body.dark-mode .btn-link{
+      font-size: .85rem;
+      border: 1px solid var(--accent);
+      width: 135px;
+      padding: 5px 0;
+       margin: 0 2px;
+      border-radius: 5px;
+      transition: .2s linear;
+      color: black;
+      background-color: transparent;
+      box-shadow: 0 0 .5rem 0 rgb(187, 187, 187);
+    }
+
+    body.dark-mode .btn-link:hover{
+      background-color: black;
+      text-decoration: none;
+      transition: .2s linear;
+      color: white;
+    }
+    .value-prop {
+      font-weight: 600;
+      font-size: 1.1em;
+      color: var(--accent); 
+     
+    }
+
+
+  .cta-copy {
+    background: #f8fafc;
+    color: var(--accent);
+    border: 2px solid #e2e8f0;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 12px 0 0px 0;
+  }
+
+  .cta-copy:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+  }
+
+
+
+    @media (max-width: 720px) {
+      body {
+        padding: 1rem;
+      }
+ 
+      section {
+        padding: 1rem 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+    .media-item {
+      width: 250px;
+      height: 400px;
+    
+    
+     border-radius: 5px;
+    }
+    }
+  </style>
+
+<!--   ---------------------------------------------------- -->
+
+<style>
+
+
+  /* ---- Added style for profile image ---- */
+ .profile-photo {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+object-fit: cover;
+object-position: center 0px;
+border: 1px solid var(--accent);
+
+margin: 0 auto 2.9rem;
+display: block;
+transform: scale(1.4);    
+
+}
+
+ 
+  /* -------------------------------------- */
+
+
+
+  .cargo .badge-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(79,156,255,0.8);
+  }
+
+/*   h1 {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin: 1rem 0 0.5rem;
+  }
+ */
+  .subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0.5rem auto 1rem;
+  }
+
+  .subtitle a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .subtitle a:hover {
+    text-decoration: underline;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.75rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: rgba(9,14,30,0.8);
+  }
+
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .lang-btn {
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.9rem;
+    font-size: 0.8rem;
+    background: rgba(10,15,32,0.8);
+    color: var(--muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .lang-btn.active {
+    background: var(--accent-soft);
+    color: var(--text);
+    border-color: var(--accent);
+  }
+
+  main {
+    padding-top: 5rem;
+  }
+
+
+
+
+  .lang-section {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .lang-section.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  section {
+    background: rgba(11,16,32,0.9);
+    border-radius: var(--card-radius);
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    
+  }
+
+
+body.dark-mode {
+  background-color: white;
+}
+
+body.dark-mode header{
+  background-color: white;
+}
+
+body.dark-mode main {
+  background-color: white;
+ }
+
+ body.dark-mode h1{
+  color: black;
+ }
+
+
+   body.dark-mode section{
+      background-color: rgb(217, 216, 216);
+   }
+
+
+  .about-text p + p {
+    margin-top: 0.5rem;
+  }
+
+body.dark-mode .medios{
+  background-color: white;
+  box-shadow: none;
+}
+
+@media (max-width: 720px) {
+    body {
+      padding: 1rem;
+    }
+
+  .badge {
+    display: inline-flex;
+    flex-direction: column;
+
+    padding: 1rem;
+   
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(11,16,32,0.85);
+    
+    color: var(--muted);
+  
+  }
+
+  .cargo{
+    font-size: .7rem;
+    padding: 0 .2rem;  
+    
+   }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(79,156,255,0.8);
+  }
+
+    section {
+      padding: 1rem 1rem;
+    }
+  
+    body.dark-mode {
+      padding: 1rem;
+    }
+
+  body.dark-mode  section {
+      padding: 1rem 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+ 
+  <div class="page">
+    <div class="dark-mode-toggle modern" id="dark-mode-toggle">
+         <span class="icon"></span>
+    </div>
+    <header>
+
+      <img src="imagen_perfil.png"  class="profile-photo" alt="Leonardo Prone">
+
+      <h1>Leonardo Prone</h1>
+
+  <div class="badge">
+    <div class="cargo">
+      <span class="badge-dot"></span>
+      <span>Creador de contenido biotecnológico</span>
+    </div>
+    <div class="cargo">
+      <span class="badge-dot"></span><span> Biotecnólogo </span>
+    </div>
+  
+  </div>
+
+
+  <p class="subtitle">Traduzco ciencia compleja a lenguaje cotidiano.</p>
+
+     
+    </header>
+
+    <main>
+
+
+    
+
+
+      <!-- Spanish section -->
+      <div id="lang-es" class="lang-section active" lang="es">
+        <section>
+          <h2>Sobre mí</h2>
+          <div class="about-text">
+             
+
+            <p>
+             
+            Soy <strong>biotecnólogo</strong> y creador de contenido biotecnológico adaptado a distintas audiencias.
+                   
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Conectemos</h2>
+         
+          <div class="social-links">
+            <a class="facebook-class social-link sin-margin" href="https://www.linkedin.com/in/leonardo-prone/" target="_blank"></a>
+              
+        
+          </div>
+          <p class="email">
+            <button class="cta-copy" onclick="copiarEmail()">
+               Copiar email
+            </button>
+          </p>
+        </section>
+
+  
+        <section class="serie">
+          <h2>Serie "Argentine Biotech Startups"</h2>
+          <p style="padding: 20px; text-align: center; margin: 0 0 20px 0;">
+             El <strong>ecosistema biotecnológico argentino</strong> es un sector de crecimiento explosivo en los últimos años que merece ganar visibilidad. Es por ello que analizo información de libre acceso de startups biotecnológicas y publico descripciones en lenguaje cotidiano de las soluciones que estas ofrecen.
+          </p>
+          <div class="media-grid">
+        
+            <div class="media-item">
+             
+              <img src="portada_articulos.png">
+              
+              <h1>Argentine Biotech Startups <br><strong>Michroma</strong></h1>
+              <div class="description-container">
+                  <p>
+                    Desarrolla colorantes naturales comestibles utilizando fermentación de precisión con hongos filamentosos
+                  </p>
+              </div>
+                <a href="https://www.linkedin.com/pulse/argentine-biotech-startups-agrosintex-leonardo-prone-yamff/?trackingId=KRM4VvovSuyVV6xmbmNubg%3D%3D" target="_blank" rel="noopener noreferrer">
+                  Leer artículo
+                </a>
+              
+              </div>
+            
+              <div class="media-item">
+             
+                <img src="portada_articulos.png">
+                
+                <h1>Argentine Biotech Startups <br><strong>BioClé</strong></h1>
+                <div class="description-container">
+                    <p>
+                      Desarrolla una plataforma de delivery que protege y transporta las moléculas bioactivas hasta el interior de las células intestinales correctas, aumentando la eficacia y reduciendo la dosis necesaria en las formulaciones
+                    </p>
+                </div>
+                  <a href="https://www.linkedin.com/pulse/startups-biotecnol%C3%B3gicas-argentinas-biocl%C3%A9-leonardo-prone-olm3f/?trackingId=aj1MJ1UL0%2BVVLoGZGRuZug%3D%3D" target="_blank" rel="noopener noreferrer">
+                    Leer artículo
+                  </a>
+                
+                </div>
+            
+                <div class="media-item">
+             
+                  <img src="portada_articulos.png">
+                  
+                  <h1>Argentine Biotech Startups <br><strong>Mycorium Biotech</strong></h1>
+                  <div class="description-container">
+                      <p>
+                        Elabora un biomaterial similar al cuero y compostable mediante un proceso circular, escalable y sostenible, con bajo consumo de agua y bajos niveles de emisión de carbono como una alternativa más escalable que el cuero natural y más sostenible que el ecocuero (plástico)
+                      </p>
+                  </div>
+                    <a href="https://www.linkedin.com/pulse/startups-bio-argentinas-mycorium-biotech-leonardo-prone-w3h2f/?trackingId=DyVOEMD7P0XRQzaECE%2FOgQ%3D%3D" target="_blank" rel="noopener noreferrer">
+                      Leer artículo
+                    </a>
+                  
+                  </div>
+
+                  <div class="media-item">
+             
+                    <img src="portada_articulos.png">
+                    
+                    <h1>Argentine Biotech Startups <br><strong>Dharma Bioscience</strong></h1>
+                    <div class="description-container">
+                        <p>
+                          Propone una solución mínimamente invasiva y de acción sitio-específica que intenta reparar el tejido cartilaginoso articular al revertir el estado alterado de sus condrocitos, restaurando el equilibrio entre la síntesis y degradación de la MEC
+                        </p>
+                    </div>
+                      <a href="https://www.linkedin.com/pulse/startups-biotecnol%25C3%25B3gicas-argentinas-dharma-bioscience-prone-03due/" target="_blank" rel="noopener noreferrer">
+                        Leer artículo
+                      </a>
+                    
+                    </div>
+
+
+                    <div class="media-item">
+             
+                      <img src="portada_articulos.png">
+                      
+                      <h1>Argentine Biotech Startups <br><strong>Agrosintex</strong></h1>
+                      <div class="description-container">
+                          <p>
+                            Propone la elaboración de un complemento dietario capaz de reducir las emisiones de metano en ganado bovino de fácil implementación por los productores ganaderos 
+                          </p>
+                      </div>
+                        <a href="https://www.linkedin.com/pulse/startups-biotecnol%C3%B3gicas-argentinas-agrosintex-leonardo-prone-yyosf/?trackingId=ImgjNvsTk%2BGdDBODaR3nyg%3D%3D" target="_blank" rel="noopener noreferrer">
+                          Leer artículo
+                        </a>
+                      
+                      </div>
+
+
+
+
+
+
+
+                        <div class="media-item">
+             
+                          <img src="portada_articulos.png">
+                          
+                          <h1>Argentine Biotech Startups <br><strong>Oncoliq</strong></h1>
+                          <div class="description-container">
+                              <p>
+                                Está desarrollando una tecnología que permitiría el tamizaje inicial (screening) no diagnóstico para múltiples tipos de cáncer en etapas más tempranas que los métodos actuales mediante un simple análisis de sangre rutinario, económico, mínimamente invasivo y ejecutable en cualquier laboratorio de biología molecular con equipamiento básico
+                              </p>
+                          </div>
+                            <a href="https://www.linkedin.com/pulse/startups-biotecnol%C3%B3gicas-argentinas-oncoliq-leonardo-prone-pf83f/?trackingId=2ha%2FXL%2BmQ13XX2TLMRu29A%3D%3D" target="_blank" rel="noopener noreferrer">
+                              Leer artículo
+                            </a>
+                          
+                          </div>
+
+  
+
+                          <div class="media-item">
+             
+                            <img src="portada_articulos.png">
+                            
+                            <h1>Argentine Biotech Startups <br><strong>ArgenTag</strong></h1>
+                            <div class="description-container">
+                                <p>
+                                  Su tecnología permite secuenciar ARN mensajeros completos desde miles de células individuales, combinando precisión, escalabilidad y compatibilidad con plataformas ONT/PacBio ya disponibles en muchos labs (sin necesidad de dispositivos costosos adicionales) 
+                                </p>
+                            </div>
+                              <a href="https://www.linkedin.com/pulse/6-startups-biotecnol%C3%B3gicas-argentinas-argentag-es-leonardo-prone-rkidf/?trackingId=PwsWAo8tfI%2BJFYZcsx1DnQ%3D%3D" target="_blank" rel="noopener noreferrer">
+                                Leer artículo
+                              </a>
+                            
+                            </div>
+
+
+
+
+                            <div class="media-item">
+             
+                              <img src="portada_articulos.png">
+                              
+                              <h1>Argentine Biotech Startups <br><strong>Trebe Biotech</strong></h1>
+                              <div class="description-container">
+                                  <p>
+                                    Propone producir proteínas recombinantes mediante una plataforma que utiliza larvas de insectos (no biorreactores) y cuyo proceso sería altamente flexible, sostenible, rápido, de fácil escalado y bajo costo 
+                                  </p>
+                              </div>
+                                <a href="https://www.linkedin.com/pulse/7-startups-biotecnol%C3%B3gicas-argentinas-trebe-biotech-es-leonardo-prone-y6hif/?trackingId=OnMlNke5axrCzlDMfyPyBA%3D%3D" target="_blank" rel="noopener noreferrer">
+                                  Leer artículo
+                                </a>
+                              
+                              </div>
+
+
+                              <div class="media-item">
+             
+                                <img src="portada_articulos.png">
+                                
+                                <h1>Argentine Biotech Startups <br><strong>MesencHyal-T</strong></h1>
+                                <div class="description-container">
+                                    <p>
+                                      Propone prevenir el fracaso en la recuperación de lesiones óseas críticas y revertir el estado de pseudoartrosis mediante una terapia celular avanzada con la cual podrían regenerar el hueso de forma natural y duradera, reducir el tiempo necesario para restaurar la función y movilidad ósea, y reducir complicaciones 
+                                    </p>
+                                </div>
+                                  <a href="https://www.linkedin.com/pulse/8-startups-biotecnol%C3%B3gicas-argentinas-mesenchyal-t-es-leonardo-prone-khnff/?trackingId=9kn1R011OPaN4M1R6G9qjQ%3D%3D" target="_blank" rel="noopener noreferrer">
+                                    Leer artículo
+                                  </a>
+                                
+                                </div>
+  
+           
+          </div>
+        </section>
+
+
+        <section class="serie">
+          <h2>Conexión entre startups</h2>
+          <p style="padding: 20px; text-align: center; margin: 0 0 20px 0;">
+             Existen <strong>puntos de conexión</strong> entre algunas startups del ecosistema argentino. En esta serie exploro algunos vínculos posibles.
+          </p>
+          <div class="media-grid">
+
+
+            <article class="media-item conexiones">
+             
+              <img src="portada_articulos.png">
+              
+              <h1><strong>Oncoliq</strong><br>+ <br> <strong>ArgenTag</strong></h1>
+              <div class="description-container">
+                  <p>
+                    Tratamiento eficiente del cáncer: detección temprana + terapia de precisión 
+                  </p>
+              </div>
+                <a href="https://www.linkedin.com/posts/leonardo-prone_oncoliq-argentag-oncoliq-activity-7428106335092621313-ypyD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACh7cNAB0qO8iDLU0fU6SJQDxYS1ap2OtEo" target="_blank" rel="noopener noreferrer">
+                  Leer artículo
+                </a>
+              
+            </article>
+
+
+
+              <article class="media-item conexiones">
+             
+                <img src="portada_articulos.png">
+                
+                <h1><strong>MesencHyal-T</strong><br>+ <br> <strong>Dharma Bioscience</strong></h1>
+                <div class="description-container">
+                  <p>Sinergia en el tratamiento de fracturas articulares difíciles de sanar</p>
+                </div>
+                  <a href="https://www.linkedin.com/posts/leonardo-prone_artrosis-microarns-arthrosis-activity-7431039623432310784-bvbH?utm_source=share&utm_medium=member_desktop&rcm=ACoAACh7cNAB0qO8iDLU0fU6SJQDxYS1ap2OtEo" target="_blank" rel="noopener noreferrer">
+                    Leer artículo
+                  </a>
+                
+              </article>
+        
+ 
+          
+            </div>
+   
+        </section>
+
+   
+      </div>
+    </main>
+
+    <footer>
+       <div class="button-social" >
+                             <div class="social-section">
+          
+            <div class="social">
+                <div class="desarrollo">
+                        <div class="texto">Desarrollo Web</div>
+                        <div class="contenedor-nombre-linkedin">
+                             <div class="nombre">Leonardo Prone</div>
+                              
+                        </div>
+                       
+                </div>
+             
+                  <a class="facebook-class social-link" href="https://www.linkedin.com/in/leonardo-prone/" target="_blank"></a>
+              
+            </div>
+      
+    </footer>
+  </div>
+
+ <!--  <script>
+    // Language switcher
+    const buttons = document.querySelectorAll('.lang-btn');
+    const sections = {
+      en: document.getElementById('lang-en'),
+      es: document.getElementById('lang-es')
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        Object.keys(sections).forEach(k => {
+          sections[k].classList.toggle('active', k === lang);
+        });
+        document.documentElement.lang = lang;
+      });
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script> -->
+   
+  
+  <script>
+    
+     const toggleDarkMode = () => {
+         
+          document.body.classList.toggle('dark-mode');
+          
+          const isDarkMode = document.body.classList.contains('dark-mode');
+        
+          localStorage.setItem('dark-mode', isDarkMode);
+        
+        };
+        
+        // Aplicar el modo oscuro si estaba habilitado anteriormente
+        if (localStorage.getItem('dark-mode') === 'true') {
+          document.body.classList.add('dark-mode');
+         
+        }
+        
+
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+      
+      
+   </script>
+
+   
+  <script>
+    function copiarEmail() {
+      navigator.clipboard.writeText('leoprone@gmail.com');
+      this.textContent = '✅ Copiado!';
+      setTimeout(() => this.textContent = '📧 Copiar email', 2000);
+    }
+  </script>
+</body>
+</html>
